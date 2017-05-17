@@ -10,19 +10,52 @@ set nuw=6
 
 "hi Normal guibg=#1d1f21
 "hi LineNr guifg=#626267 guibg=#1d1f21
-hi LineNr guifg=#626267
-hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#303137
-hi clear SignColumn
 "hi NonText ctermbg=black guibg=#1d1f21
-hi NonText ctermbg=black guibg=#303234
-hi ColorColumn ctermbg=234 guibg=#27292b
+
+hi clear SignColumn
+
+
+" Dark
+" hi NonText ctermbg=black guibg=#303234
+" hi LineNr guifg=#626267
+" hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#303137
+" hi ColorColumn ctermbg=234 guibg=#27292b
+" hi CursorLine ctermbg=234 guibg=#343638
+
+
+
+
+" Light
+"
+set background=light
+colorscheme base16-tomorrow
+hi NonText ctermbg=black guibg=#ffffff
+hi LineNr guifg=#cccccc guibg=#ffffff
+hi CursorLineNr guifg=#aaaaac guibg=#ffffff
+hi ColorColumn guibg=#fafafa
+hi CursorLine guibg=#f2f2f2
+
+
+
+
+
 " hi CursorLine ctermbg=234 guibg=#202224
-hi CursorLine ctermbg=234 guibg=#343638
 autocmd BufEnter,BufRead *.py,*.elm set colorcolumn=73,80,100
 autocmd BufEnter,BufRead *.ex,*.exs,*.yml,*.html,*.feature,*.js,*.coffee,*.less,*.css,*.sass,*.scss set shiftwidth=2 softtabstop=2 colorcolumn=80,100
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile,BufEnter *.hbs set ft=mustache
 autocmd BufEnter,BufRead *.md,*.markdown set wrap
+
+
+
+
+" Powerline  (not supported in neovim yet)
+" https://github.com/powerline/powerline/issues/1287
+"
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
+
 
 
 " source ~/Archive/vim-htmlbars-inline-syntax/plugin/htmlbars_inline_syntax.vim
