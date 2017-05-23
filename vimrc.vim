@@ -15,25 +15,32 @@ set nuw=6
 hi clear SignColumn
 
 
+
+
+
+
 " Dark
-" hi NonText ctermbg=black guibg=#303234
-" hi LineNr guifg=#626267
-" hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#303137
-" hi ColorColumn ctermbg=234 guibg=#27292b
-" hi CursorLine ctermbg=234 guibg=#343638
+hi NonText ctermbg=black guibg=#303234
+hi LineNr guifg=#626267
+hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#303137
+hi ColorColumn ctermbg=234 guibg=#27292b
+hi CursorLine ctermbg=234 guibg=#343638
+
+
+
 
 
 
 
 " Light
 "
-set background=light
-colorscheme base16-tomorrow
-hi NonText ctermbg=black guibg=#ffffff
-hi LineNr guifg=#cccccc guibg=#ffffff
-hi CursorLineNr guifg=#aaaaac guibg=#ffffff
-hi ColorColumn guibg=#fafafa
-hi CursorLine guibg=#f2f2f2
+" set background=light
+" colorscheme base16-tomorrow
+" hi NonText ctermbg=black guibg=#ffffff
+" hi LineNr guifg=#cccccc guibg=#ffffff
+" hi CursorLineNr guifg=#aaaaac guibg=#ffffff
+" hi ColorColumn guibg=#fafafa
+" hi CursorLine guibg=#f2f2f2
 
 
 
@@ -104,7 +111,7 @@ set tags=./.tags,.tags
 " Elm ctags
 function! ElmAutoTag()
     exe 'silent !rm -rf ctags'
-    exe 'silent !ctags -Rf .tags --languages=-all,+Elm'
+    exe 'silent !ctags -Rf .tags --exclude=elm-stuff --exclude=tmp --languages=-all,+Elm'
     exe 'redraw!'
 endfunction
 
@@ -120,11 +127,21 @@ endif
 
 " Overriding dotfiles/vim/vanilla-configs/status-line.vim for light theme
 "
-let s:currentmode={'n':  {'text': 'NORMAL',  'termColor': 60, 'guiColor': '#d0d0d0'},
+"
+" Light theme
+" let s:currentmode={'n':  {'text': 'NORMAL',  'termColor': 60, 'guiColor': '#d0d0d0'},
+" 			\ 'v':  {'text': 'VISUAL',  'termColor': 58, 'guiColor': '#D65D0E'},
+" 			\ 'V':  {'text': 'V-LINE',  'termColor': 58, 'guiColor': '#D65D0E'},
+" 			\ '': {'text': 'V-BLOCK', 'termColor': 58, 'guiColor': '#D65D0E'},
+" 			\ 'i':  {'text': 'INSERT',  'termColor': 29, 'guiColor': '#8EC07C'},
+" 			\ 'R':  {'text': 'REPLACE', 'termColor': 88, 'guiColor': '#CC241D'}}
+"
+" Dark theme
+let s:currentmode={'n':  {'text': 'NORMAL',  'termColor': 60, 'guiColor': '#909090'},
 			\ 'v':  {'text': 'VISUAL',  'termColor': 58, 'guiColor': '#D65D0E'},
 			\ 'V':  {'text': 'V-LINE',  'termColor': 58, 'guiColor': '#D65D0E'},
 			\ '': {'text': 'V-BLOCK', 'termColor': 58, 'guiColor': '#D65D0E'},
-			\ 'i':  {'text': 'INSERT',  'termColor': 29, 'guiColor': '#8EC07C'},
+			\ 'i':  {'text': 'INSERT',  'termColor': 29, 'guiColor': '#6E905C'},
 			\ 'R':  {'text': 'REPLACE', 'termColor': 88, 'guiColor': '#CC241D'}}
 
 function! TextForCurrentMode()
@@ -140,9 +157,15 @@ function! TextForCurrentMode()
 endfunction
 
 function! BuildStatusLine(showMode)
-    hi User1 ctermfg=236 ctermbg=101 guifg=#303030 guibg=#d0d0d0 cterm=reverse
-    hi User7 ctermfg=88  ctermbg=236 guifg=#870000 guibg=#e0e0e0 cterm=none
-    hi User8 ctermfg=236 ctermbg=101 guifg=#303030 guibg=#d0d0d0 cterm=reverse
+    " Dark theme
+    hi User1 ctermfg=236 ctermbg=101 guibg=#505050 guifg=#d0d0d0 cterm=reverse
+    hi User7 ctermfg=88  ctermbg=236 guibg=#870000 guifg=#e0e0e0 cterm=none
+    hi User8 ctermfg=236 ctermbg=101 guibg=#505050 guifg=#d0d0d0 cterm=reverse
+
+    " Light theme
+    " hi User1 ctermfg=236 ctermbg=101 guifg=#303030 guibg=#d0d0d0 cterm=reverse
+    " hi User7 ctermfg=88  ctermbg=236 guifg=#870000 guibg=#e0e0e0 cterm=none
+    " hi User8 ctermfg=236 ctermbg=101 guifg=#303030 guibg=#d0d0d0 cterm=reverse
     setl statusline=
     if a:showMode
         setl statusline+=%1*\ %{TextForCurrentMode()}\ "

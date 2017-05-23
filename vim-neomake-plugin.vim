@@ -8,8 +8,10 @@
 "===============================================================================
 " let g:neomake_javascript_enabled_makers = ['eslint']
 "
-" Disabling *.ex files because it keeps throwing errors :(
-autocmd! BufWritePost,BufEnter *.js,*.elm silent NeomakeFile
+" Removing *.ex files because it keeps throwing errors :(
+" Removing *.elm files because ElmMake takes forever and we get output in the
+" console anyway
+autocmd! BufWritePost,BufEnter *.js silent NeomakeFile
 
 "===============================================================================
 " Plugin Keymappings
