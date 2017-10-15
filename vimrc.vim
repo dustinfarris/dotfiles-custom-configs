@@ -18,13 +18,25 @@ hi clear SignColumn
 
 
 
+" Dark (Gray)
+" hi Normal guibg=#202020
+hi Normal guibg=#242d39
 
-" Dark
-hi NonText ctermbg=black guibg=#303234
-hi LineNr guifg=#626267
-hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#303137
-hi ColorColumn ctermbg=234 guibg=#27292b
-hi CursorLine ctermbg=234 guibg=#343638
+hi NonText ctermbg=black guibg=#242d39
+hi LineNr guifg=#626267 guibg=#242d39
+hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#242d39
+" hi ColorColumn ctermbg=234 guibg=#27292b
+" hi CursorLine ctermbg=234 guibg=#282828
+" hi ColorColumn ctermbg=234 guibg=#3a3a3a
+" hi CursorLine ctermbg=234 guibg=#3a3a3a
+
+
+" Dark (Blue)
+" hi NonText ctermbg=black guibg=#242c30
+" hi LineNr guifg=#626267 guibg=#242c30
+" hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#202020
+" hi ColorColumn ctermbg=234 guibg=#27292b
+" hi CursorLine ctermbg=234 guibg=#333d3c
 
 
 
@@ -52,7 +64,31 @@ autocmd BufEnter,BufRead *.ex,*.exs,*.yml,*.html,*.feature,*.js,*.coffee,*.less,
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile,BufEnter *.hbs set ft=mustache
 autocmd BufEnter,BufRead *.md,*.markdown set wrap
+" autocmd BufRead *.ex,*.exs set foldlevelstart=2
 
+set foldmethod=syntax
+noremap <tab> za
+
+" Getting folds to behave when navigating is hard :(
+" autocmd BufLeave *.* mkview!
+" autocmd BufEnter *.* silent loadview
+" autocmd InsertLeave,WinEnter * let &l:foldmethod=g:oldfoldmethod
+" autocmd InsertEnter,WinLeave * let g:oldfoldmethod=&l:foldmethod | setlocal foldmethod=manual
+
+augroup ELM
+    autocmd!
+    autocmd FileType elm setlocal foldmethod=indent foldlevel=-1 foldlevelstart=1
+    " autocmd InsertEnter,WinLeave *.elm setlocal foldmethod=manual
+    " autocmd InsertLeave,WinEnter *.elm setlocal foldmethod=indent foldlevel=-1 foldlevelstart=1 foldminlines=0
+augroup END
+
+augroup ELIXIR
+    autocmd!
+    autocmd FileType elixir setlocal foldmethod=syntax
+    autocmd BufRead,BufNewFile *.ex,*.exs setlocal foldlevel=1 foldminlines=0
+    "autocmd InsertEnter,WinLeave *.ex,*.exs setlocal foldmethod=manual
+    "autocmd InsertLeave,WinEnter *.ex,*.exs setlocal foldmethod=syntax foldlevel=1 foldminlines=0
+augroup END
 
 
 
@@ -64,41 +100,17 @@ autocmd BufEnter,BufRead *.md,*.markdown set wrap
 " python del powerline_setup
 
 
-
-" source ~/Archive/vim-htmlbars-inline-syntax/plugin/htmlbars_inline_syntax.vim
-" autocmd BufRead,BufNewFile *.js HighlightInlineHbs
-
-augroup my_neomake_signs
-    au!
-    autocmd ColorScheme *
-                \ hi clear NeomakeErrorSignDefault
-augroup END
-
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
 let g:startify_custom_header = ['']
 
 " Position cursor between to braces/parens on return
 let g:delimitMate_expand_cr = 1
 
 " Override and use file_rec/git instead of file_rec/async (it is much faster)
-nnoremap <Leader>ff :Unite file file_rec/git -start-insert -buffer-name=files -winheight=18<CR>
+" nnoremap <Leader>ff :Unite file file_rec/git -start-insert -buffer-name=files -winheight=18<CR>
 
 " Not-so-hardtime
 let g:hardtime_maxcount = 100
 
-" Use eslint for JS linting instead of jshint
-let g:syntastic_javascript_checkers = ['eslint']
-
-" Define alternative filetype names for markdown syntax highlighting
-let g:vim_markdown_fenced_languages = ['js=javascript']
-
-" Use neomake instead of syntastic
-
-" Missing html tags (html5 + flexi)
-autocmd BufEnter *.js,*.hbs syn keyword htmlTagName contained section article screen page box vbox hbox centered fill grid container
 
 " Tagbar
 noremap <Leader>tt :TagbarOpenAutoClose<CR>

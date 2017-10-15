@@ -7,10 +7,11 @@ alias mm='./manage.py makemigrations'
 alias ipy='ipython3'
 alias activate='source env/bin/activate'
 alias gs='git status'
+alias nv='nvim'
 
 export DJANGO_ENV=local
 
-export PATH="./node_modules/.bin:$PATH:`yarn global bin`"
+export PATH="/usr/local/opt/openssl/bin:./node_modules/.bin:$PATH"
 
 . $HOME/.asdf/asdf.sh
 # . $HOME/.asdf/completions/asdf.bash
