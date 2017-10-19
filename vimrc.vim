@@ -77,7 +77,7 @@ noremap <tab> za
 
 augroup ELM
     autocmd!
-    autocmd FileType elm setlocal foldmethod=indent foldlevel=-1 foldlevelstart=1
+    autocmd FileType elm setlocal foldmethod=syntax " foldlevel=-1 foldlevelstart=1
     " autocmd InsertEnter,WinLeave *.elm setlocal foldmethod=manual
     " autocmd InsertLeave,WinEnter *.elm setlocal foldmethod=indent foldlevel=-1 foldlevelstart=1 foldminlines=0
 augroup END
