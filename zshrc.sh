@@ -11,6 +11,7 @@ alias nv='nvim'
 
 export DJANGO_ENV=local
 
+export PATH="/Users/dustinfarris/anaconda3/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:./node_modules/.bin:$PATH"
 
 . $HOME/.asdf/asdf.sh
@@ -23,3 +24,6 @@ export GPG_TTY=$(tty)
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export GIT_EDITOR="$VISUAL"
+
+# For pypi: https://stackoverflow.com/questions/32772895/python-pip-install-error-ssl-certificate-verify-failed#37688849
+export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
