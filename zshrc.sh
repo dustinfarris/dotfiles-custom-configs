@@ -11,7 +11,7 @@ alias nv='nvim'
 
 export DJANGO_ENV=local
 
-export PATH="/Users/dustinfarris/anaconda3/bin:$PATH"
+# export PATH="/Users/dustinfarris/anaconda3/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:./node_modules/.bin:$PATH"
 
 . $HOME/.asdf/asdf.sh
