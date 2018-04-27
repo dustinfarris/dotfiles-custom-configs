@@ -27,5 +27,11 @@ export GIT_EDITOR="$VISUAL"
 
 # For pypi: https://stackoverflow.com/questions/32772895/python-pip-install-error-ssl-certificate-verify-failed#37688849
 export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
+
 # added by Anaconda3 5.0.1 installer
-export PATH="/Users/dustin/anaconda3/bin:$PATH"
+# export PATH="/Users/dustin/anaconda3/bin:$PATH"
+
+# for python openssl
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"

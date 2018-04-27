@@ -116,7 +116,7 @@ function! GetPythonIndent(lnum)
             if closing_paren
                 return indent(parlnum)
             else
-                return indent(parlnum) + &shiftwidth / 2
+                return indent(parlnum) + &shiftwidth
             endif
         else
             if closing_paren

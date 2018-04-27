@@ -12,7 +12,7 @@
 [user]
     name = Dustin Farris
     email = dustin@farris.io
-    signingkey = B8F8A436
+	signingkey = 267CAE08FB989C5C
 [push]
     default = matching
 [alias]
