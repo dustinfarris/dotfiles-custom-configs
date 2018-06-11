@@ -4,5 +4,9 @@
   editor:
     fontFamily: "Consolas, DejaVu Sans Mono, monospace"
     scrollPastEnd: true
+  elmjutsu:
+    cacheDirectory: "/var/folders/4g/6zr14n815m715cq6nxv15d700000gn/T/elmjutsu19121RsD0o9yioPgY"
   "exception-reporting":
     userId: "fb79f253-a993-4aa8-ab8a-b3ce83a66159"
+  "language-elm":
+    autocompleteEnabled: false

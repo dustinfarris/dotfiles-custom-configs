@@ -90,6 +90,13 @@ augroup ELIXIR
     "autocmd InsertLeave,WinEnter *.ex,*.exs setlocal foldmethod=syntax foldlevel=1 foldminlines=0
 augroup END
 
+augroup PYTHON
+    autocmd!
+    autocmd FileType python setlocal foldmethod=indent " foldlevel=-1 foldlevelstart=1
+    autocmd BufRead,BufNewFile *.py setlocal foldlevel=0 foldminlines=0
+    " autocmd InsertEnter,WinLeave *.elm setlocal foldmethod=manual
+    " autocmd InsertLeave,WinEnter *.elm setlocal foldmethod=indent foldlevel=-1 foldlevelstart=1 foldminlines=0
+augroup END
 
 
 " Powerline  (not supported in neovim yet)
