@@ -1,18 +1,28 @@
+" set background=dark
 set mouse=a
 set cursorline
 set nu
 set nuw=6
 
+if &term =~ '256color'
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    set t_ut=
+endif
+
 
 " colorscheme base16-tomorrow-night
 " colorscheme codeschool
 
+hi Comment guifg=background
+hi Comment guibg=#aaaaac
 
 "hi Normal guibg=#1d1f21
 "hi LineNr guifg=#626267 guibg=#1d1f21
 "hi NonText ctermbg=black guibg=#1d1f21
 
 hi clear SignColumn
+" hi Comment ctermbg=black guibg=#1d1f21
 
 
 
@@ -201,4 +211,3 @@ function! BuildStatusLine(showMode)
     setl statusline+=\ [LEN=%L]                      " Number of line in the file
     setl statusline+=%#warningmsg#                   " Highlights the syntastic errors in red
 endfunction
-

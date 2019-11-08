@@ -30,7 +30,7 @@ call denite#custom#var('file_rec', 'command',
 " Plugin Keymappings
 "===============================================================================
 nnoremap <Leader>b :Denite buffer<CR>
-nnoremap <Leader>ff :Denite file_rec -auto-resize -winheight=12 -auto-highlight -reversed<CR>
+" nnoremap <Leader>ff :Denite file/rec -auto-resize -winheight=12 -auto-highlight -reversed<CR>
 nnoremap <Leader>vu :PlugUpdate<CR>
 
 "===============================================================================

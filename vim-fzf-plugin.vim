@@ -1,32 +1,17 @@
 "===============================================================================
 " Plugin source
 "===============================================================================
-"'w0rp/ale'
+"'junegunn/fzf'
 
 "===============================================================================
 " Plugin Configurations
 "===============================================================================
-let g:ale_set_highlights = 0
-let g:ale_pattern_options = {
-            \  '\.py$': {
-            \    'ale_linters': ['flake8']
-            \   },
-            \  '_test\.py$': {
-            \    'ale_linters': [],
-            \  }
-            \}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
-\   'typescript': ['prettier', 'eslint'],
-\}
-let g:ale_fix_on_save = 1
 
 "===============================================================================
 " Plugin Keymappings
 "===============================================================================
-map ;j :ALENext<CR>
-map ;k :ALEPrevious<CR>
+noremap <Leader>f :call fzf#run({'source': 'git ls-files', 'sink': 'e', 'down': '20%'})<CR>
+"noremap <Leader>ff :FZF<CR>
 
 "===============================================================================
 " Unite Keymap Menu Item(s)

@@ -37,13 +37,7 @@ export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # for aws-shib
-export PATH="$HOME/go/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 # remember iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dustinfarris/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dustinfarris/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/dustinfarris/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dustinfarris/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

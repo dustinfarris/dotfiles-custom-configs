@@ -12,7 +12,7 @@
 [user]
     name = Dustin Farris
     email = dustin@farris.io
-	signingkey = 267CAE08FB989C5C
+	signingkey = 9AD58984A9BDB82B
 [push]
     default = matching
 [alias]
@@ -27,3 +27,5 @@
 	editor = nvim
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[commit]
+	gpgsign = true
