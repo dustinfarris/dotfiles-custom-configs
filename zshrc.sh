@@ -8,6 +8,9 @@ alias ipy='ipython3'
 alias activate='source env/bin/activate'
 alias gs='git status'
 alias nv='nvim'
+alias l='ledger -f'
+
+export HISTCONTROL=ignorespace
 
 export DJANGO_ENV=local
 
@@ -47,3 +50,12 @@ if [ -f '/Users/dustinfarris/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dustinfarris/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dustinfarris/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="$GOPATH/bin:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/lib/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/lib/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/lib/google-cloud-sdk/completion.zsh.inc'; fi

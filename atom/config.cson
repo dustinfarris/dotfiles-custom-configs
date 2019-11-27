@@ -1,8 +1,13 @@
 "*":
   core:
     telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
   editor:
     fontFamily: "Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 16
     scrollPastEnd: true
   elmjutsu:
     cacheDirectory: "/var/folders/4g/6zr14n815m715cq6nxv15d700000gn/T/elmjutsu19121RsD0o9yioPgY"

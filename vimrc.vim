@@ -65,9 +65,6 @@ hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#242d39
 " hi CursorLine guibg=#f2f2f2
 
 
-
-
-
 " hi CursorLine ctermbg=234 guibg=#202224
 autocmd BufEnter,BufRead *.py,*.elm set colorcolumn=73,80,100
 autocmd BufEnter,BufRead *.ex,*.exs,*.yml,*.html,*.feature,*.js,*.coffee,*.less,*.css,*.sass,*.scss set shiftwidth=2 softtabstop=2 colorcolumn=80,100
