@@ -14,14 +14,16 @@ endif
 " colorscheme base16-tomorrow-night
 " colorscheme codeschool
 
-hi Comment guifg=background
-hi Comment guibg=#aaaaac
 
 "hi Normal guibg=#1d1f21
+" hi Normal ctermfg=231 ctermbg=16 guifg=#d7d7d7 guibg=#252c31
 "hi LineNr guifg=#626267 guibg=#1d1f21
 "hi NonText ctermbg=black guibg=#1d1f21
 
 hi clear SignColumn
+" hi Normal ctermfg=231 ctermbg=16 guifg=#d7d7d7 guibg=#000000
+" hi Comment guifg=background
+" hi Comment ctermbg=black guibg=#000000
 " hi Comment ctermbg=black guibg=#1d1f21
 
 
@@ -30,10 +32,11 @@ hi clear SignColumn
 
 " Dark (Gray)
 " hi Normal guibg=#202020
-hi Normal guibg=#242d39
+" hi Normal guibg=#242d39
 
 hi NonText ctermbg=black guibg=#242d39
-hi LineNr guifg=#626267 guibg=#242d39
+"hi LineNr guifg=#626267 guibg=#242d39
+hi LineNr guifg=#626267
 hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#242d39
 " hi ColorColumn ctermbg=234 guibg=#27292b
 " hi CursorLine ctermbg=234 guibg=#282828
@@ -184,9 +187,9 @@ endfunction
 
 function! BuildStatusLine(showMode)
     " Dark theme
-    hi User1 ctermfg=236 ctermbg=101 guibg=#505050 guifg=#d0d0d0 cterm=reverse
-    hi User7 ctermfg=88  ctermbg=236 guibg=#870000 guifg=#e0e0e0 cterm=none
-    hi User8 ctermfg=236 ctermbg=101 guibg=#505050 guifg=#d0d0d0 cterm=reverse
+    hi User1 ctermfg=235 ctermbg=101 guibg=#505050 guifg=#d0d0d0 cterm=reverse
+    hi User7 ctermfg=88  ctermbg=235 guibg=#870000 guifg=#e0e0e0 cterm=none
+    hi User8 ctermfg=235 ctermbg=101 guibg=#505050 guifg=#d0d0d0 cterm=reverse
 
     " Light theme
     " hi User1 ctermfg=236 ctermbg=101 guifg=#303030 guibg=#d0d0d0 cterm=reverse
