@@ -34,6 +34,11 @@ set --export PKG_CONFIG_PATH "/usr/local/opt/openssl@1.1/lib/pkgconfig"
 # for aws-shib
 set --export PATH "$HOME/go/bin:$PATH"
 
+# for pyenv
+set --export PYENV_ROOT "$HOME/.pyenv"
+set --export PATH "$PYENV_ROOT/bin:$PATH"
+pyenv init - | source
+
 # remember iex history
 set --export ERL_AFLAGS "-kernel shell_history enabled"
 

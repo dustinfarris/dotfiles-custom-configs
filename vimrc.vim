@@ -34,7 +34,7 @@ hi clear SignColumn
 " hi Normal guibg=#202020
 " hi Normal guibg=#242d39
 
-hi NonText ctermbg=black guibg=#242d39
+" hi NonText ctermbg=black guibg=#242d39
 "hi LineNr guifg=#626267 guibg=#242d39
 hi LineNr guifg=#626267
 hi CursorLineNr ctermfg=yellow ctermbg=233 guifg=#aaaaac guibg=#242d39
